@@ -26,6 +26,7 @@ where = ["src"]
 
 [tool.coverage.run]
 source = ["checkmk_mkp_dev"]
+omit = ["*/checkmk_mkp_dev/integration.py"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
