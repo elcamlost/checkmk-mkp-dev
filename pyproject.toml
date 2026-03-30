@@ -11,6 +11,9 @@ description = "Build tools for Checkmk MKP plugin packages"
 [project.urls]
 Homepage = "https://github.com/elcamlost/checkmk-mkp-dev"
 
+[project.scripts]
+cmk-integration-check = "checkmk_mkp_dev.integration:main"
+
 [project.optional-dependencies]
 dev = [
     "pytest",
