@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "checkmk-mkp-dev"
+version = "0.1.0"
+requires-python = ">=3.12"
+description = "Build tools for Checkmk MKP plugin packages"
+
+[project.urls]
+Homepage = "https://github.com/elcamlost/checkmk-mkp-dev"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ruff",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.coverage.run]
+source = ["checkmk_mkp_dev"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov --cov-report=term-missing --cov-report=xml --junitxml=junit.xml -o junit_family=legacy"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
